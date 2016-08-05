@@ -1,0 +1,31 @@
+{
+  "name": "simple-yaml-validator",
+  "version": "0.0.3",
+  "description": "Validate YAML strings against a simple YAML schema.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "coverage": "covert test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdmp/simple-yaml-validator.git"
+  },
+  "keywords": [
+    "sdmp",
+    "validator"
+  ],
+  "author": "saibotsivad",
+  "license": "VOL",
+  "bugs": {
+    "url": "https://github.com/sdmp/simple-yaml-validator/issues"
+  },
+  "homepage": "https://github.com/sdmp/simple-yaml-validator",
+  "devDependencies": {
+    "covert": "^1.1.0",
+    "tape": "^4.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.3.1"
+  }
+}
