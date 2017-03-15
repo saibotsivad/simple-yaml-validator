@@ -8,6 +8,9 @@ var yamlTypeMap = {
 	number: function(input) {
 		return typeof input === 'number'
 	},
+	boolean: function(input) {
+		return typeof input === 'boolean'
+	},
 	binary: function(input) {
 		return Buffer.isBuffer(input) // https://github.com/sdmp/resource-validator/issues/1
 	},
