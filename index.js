@@ -31,15 +31,39 @@ function elementIsValid(schema) {
 
 function jsonResourceIsValidForJsonSchema(jsonResource, jsonSchema) {
 	if (Array.isArray(jsonSchema)) {
-		return jsonResource && Array.isArray(jsonResource) && jsonResource.every(elementIsValid(jsonSchema[0]))
+		if ( !jsonResource ) {
+			console.log("No element found matching schema " + jsonSchema)
+			return false
+		}
+		if ( !Array.isArray(jsonResource) ) {
+			console.log("Excepted array instead of " + jsonResource)
+			return false
+		}
+		return jsonResource.every(elementIsValid(jsonSchema[0]))
 	} else {
 		return Object.keys(jsonSchema).every(function (key) {
 			if (Array.isArray(jsonSchema[key])) {
-				return jsonResource[key] && Array.isArray(jsonResource[key]) && jsonResource[key].every(elementIsValid(jsonSchema[key][0]))
+				if ( !jsonResource[key] ) {
+					console.log("No element found matching schema key '" + key + "'")
+					return false
+				}
+				if ( !Array.isArray(jsonResource[key]) ) {
+					console.log("Expected array instead of " + jsonResource[key])
+					return false
+				}
+				return jsonResource[key].every(elementIsValid(jsonSchema[key][0]))
 			} else if (typeof jsonSchema[key] === 'object') {
 				return jsonResourceIsValidForJsonSchema(jsonResource[key], jsonSchema[key])
 			} else {
-				return yamlTypeMap[jsonSchema[key]] && yamlTypeMap[jsonSchema[key]](jsonResource[key])
+				if ( !yamlTypeMap[jsonSchema[key]] ) {
+					console.log("Unsupported schema type: '" + jsonSchema[key] + "'")
+					return false
+				}
+				if ( !yamlTypeMap[jsonSchema[key]](jsonResource[key]) ) {
+					console.log("Invalid value for key '" + key + "': '" + jsonResource[key] + "' (expected: " + jsonSchema[key] + ")")
+					return false
+				}
+				return true
 			}
 		})
 	}
