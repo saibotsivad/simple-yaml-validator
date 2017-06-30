@@ -9,18 +9,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sdmp/simple-yaml-validator.git"
+    "url": "https://github.com/saibotsivad/simple-yaml-validator.git"
   },
   "keywords": [
-    "sdmp",
-    "validator"
+    "validator",
+    "validate",
+    "yaml"
   ],
   "author": "saibotsivad",
   "license": "VOL",
   "bugs": {
-    "url": "https://github.com/sdmp/simple-yaml-validator/issues"
+    "url": "https://github.com/saibotsivad/simple-yaml-validator/issues"
   },
-  "homepage": "https://github.com/sdmp/simple-yaml-validator",
+  "homepage": "https://github.com/saibotsivad/simple-yaml-validator",
   "devDependencies": {
     "covert": "^1.1.0",
     "tape": "^4.0.0"

@@ -9,7 +9,7 @@ var yamlTypeMap = {
 		return typeof input === 'number'
 	},
 	binary: function(input) {
-		return Buffer.isBuffer(input) // https://github.com/sdmp/resource-validator/issues/1
+		return Buffer.isBuffer(input)
 	},
 	timestamp: function(input) {
 		return input && input instanceof Date
