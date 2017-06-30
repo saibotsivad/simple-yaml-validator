@@ -1,6 +1,6 @@
 {
   "name": "simple-yaml-validator",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Validate YAML strings against a simple YAML schema.",
   "main": "index.js",
   "scripts": {
