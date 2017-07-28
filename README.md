@@ -1,5 +1,7 @@
 # simple-yaml-validator
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saibotsivad/simple-yaml-validator.svg)](https://greenkeeper.io/)
+
 Validate YAML strings against a simple YAML schema.
 
 ## install
